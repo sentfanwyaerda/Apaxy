@@ -1,7 +1,8 @@
 Apaxy++
 =======
 <strong>Apaxy++</strong> is a fork of [Apaxy](https://github.com/AdamWhitcroft/Apaxy), written by [adamwhitcroft](http://www.adamwhitcroft.com/). A good point of reference is his [README.md](./README-Apaxy.md).
-I only took his work, mixed it with available tools like [CKeditor](http://ckeditor.com/) and [Michelf's php-markdown](https://github.com/michelf/php-markdown/) (the first plus), and a set of handwritten php-scripts (the second plus) to accompagnie them to the point I would my Apaxy to be.
+
+I only took his work, mixed it with available tools like [CKeditor](http://ckeditor.com/) and [Michelf's php-markdown](https://github.com/michelf/php-markdown/) (the first plus), and a set of handwritten php and javascripts ([the second plus](./plus-plus/)) to accompany them to the point I would my Apaxy to be.
 
 ###Features:
 <em>each of them is experimental!!</em>
