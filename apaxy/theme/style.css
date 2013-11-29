@@ -29,9 +29,17 @@ body {
 	padding:20px;
 	-webkit-backface-visibility:hidden;
 }
-code {
-	font-family:consolas,monospace;	
+code, pre{
+	font-family:Consolas, "Liberation Mono", Courier, monospace;font-size:12px; /* max-width:500px;  */
 }
+code {
+	padding:2px 5px 3px;background:#fff;font-size:12px;border:1px solid #eee;border-radius:3px; word-wrap:break-word;
+}
+pre{
+	border:1px solid #BBB; font-size:80%; line-height:1.5em; block: inline; padding: 4px; padding-bottom: 6px; margin-bottom:1.5em;
+	/* color:#eee;background-color:#222; */
+}
+pre code { word-wrap: break-word; width: 100px; }
 a {
 	color:#61666c;
 	text-decoration:none;
@@ -39,13 +47,14 @@ a {
 a:hover {
 	color:#2a2a2a;
 }
+
 /*------------------------------------*\
     Wrapper
 \*------------------------------------*/
 .wrapper {
 	margin:0 auto;
 	padding-top:20px;
-	max-width:500px;
+	max-width:550px;
 }
 /*------------------------------------*\
     Demo block
@@ -57,41 +66,62 @@ a:hover {
 	color:#9099A3;
 }
 /*------------------------------------*\
+    README
+\*------------------------------------*/
+.README {
+	font-size:.875em;
+	margin:0 0 10px 0;
+	padding:0px;
+	color:#9099A3;
+}
+/*------------------------------------*\
     Table (directory listing)
 \*------------------------------------*/
-table {
+.index table {
 	width:100%;
 	border-collapse:collapse;
 	font-size:.875em;
 }
-tr {
+.index tr {
 	outline:0;
 	border:0;
 }
-tr:hover td {
+.index tr:hover td {
 	background:#f6f6f6;
 }
-th {
+.index th {
 	text-align:left;
 	font-size:.75em;
 	padding-right:20px;
 }
 /* 2nd Column: Filename */
-th + th {
+.index th + th {
 	width:65%;
 }
 /* 3rd Column: Last Modified */
-th + th + th {
+.index th + th + th {
 }
 /* 4th Column: Size */
-th + th + th + th {
+.index th + th + th + th {
 	width:5%;
 }
-tr td:first-of-type {
+.index tr td:first-of-type {
 	padding-left:10px;
 	padding-right:10px;
 }
-td {
+.index div.actions span.edit.button { display: inline-block; width: 16px; height: 16px; background: url("/.tools/ckeditor/skins/moono/icons.png") no-repeat 0 -360px !important;}
+.index div.actions span.history.button { display: inline-block; width: 16px; height: 16px; background: url("/.tools/ckeditor/skins/moono/icons.png") no-repeat 0 -1464px !important;}
+.index div.actions span.signature.button {display: inline-block; width: 16px; height: 16px; background: url("/.theme/icons/log.png") no-repeat 0 0px !important;}
+.index div.actions img, .index div.actions span {
+	width: 16px;
+	height: 16px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+.index div.actions a:hover {
+	background: none;
+}
+.index td {
 	padding:5px 0;
 	outline:0;
 	border:0;
@@ -104,15 +134,17 @@ td {
 	     -o-transition:background 300ms ease;
 	        transition:background 300ms ease;
 }
-td a{
+.index td a{
 	display: block;
 }
-tr.parent a {
+.index tr.parent a , .navigator a , .navigator a:hover.current, .header-logo-invertocat{
 	color:#9099A3;
 }
-	.parent a:hover {
+	.index .parent a:hover, .navigator a:hover , h1 em, .navigator a.current, .header-logo-invertocat:hover{
 		color:#2281d0;
 	}
+
+.index tr.hidden {display:none;}
 /*------------------------------------*\
     Footer
 \*------------------------------------*/
@@ -120,3 +152,34 @@ tr.parent a {
 	text-align:center;
 	font-size:.75em;
 }
+
+/*.mega-octicon, */ .octicon-mark-github { display: block; width: 48px; height: 48px; background-image: url("/.theme/icons/GitHub-Mark-48px.png")}
+.mark-git { display: block; width: 48px; height: 48px; background-image: url("/.theme/icons/Git-Icon-Black-48px.png")}
+.raspberrypi-whitebox { display: block; width: 48px; height: 48px; background-image: url("/.theme/images/raspberrypi-whitebox-logo-48px.jpg");}
+.header-logo-invertocat, .index div.actions a {  
+	position: relative;  
+	float: left;  
+	cursor: pointer;  
+}   
+.header-logo-invertocat:before, .index div.actions a:before {  
+	content: "";  
+	display: block;  
+	position: absolute;  
+	top: 0;  
+	bottom: 0;  
+	left: 0;  
+	right: 0;  
+	background: rgba(255,255,255, 0.8);  
+	-moz-transition: background .3s linear;  
+	-webkit-transition: background .3s linear;  
+	-ms-transition: background .3s linear;  
+	-o-transition: background .3s linear;  
+	transition: background .3s linear;  
+}
+.index div.actions a:before {
+	background: rgba(255,255,255, 0.4);
+}
+  
+.header-logo-invertocat:hover:before, .index div.actions a:hover:before {  
+	background: none;  
+}  
