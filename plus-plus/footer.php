@@ -6,7 +6,7 @@ require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'settings.php');
 </div><!--/.wrapper-->
 
 <div class="footer">
-	Powered by a <a href="<?php print $plus_settings["system-type:url"]; ?>"><?php print $plus_settings["system-type"]; ?></a> running <a href="<?php print $plus_settings["distribution:url"]; ?>"><?php print $plus_settings["distribution"]; ?></a>. <a href="http://apache.org/"><?php print $_SERVER["SERVER_SOFTWARE"]; ?></a> patched by <a href="http://adamwhitcroft.com/apaxy/">Apaxy</a><a href="https://github.com/sentfanwyaerda/Apaxy-plus-plus">++</a>
+	Powered by a <a href="<?php print $plus_settings["system-type:url"]; ?>"><?php print $plus_settings["system-type"]; ?></a> running <a href="<?php print $plus_settings["distribution:url"]; ?>"><?php print $plus_settings["distribution"]; ?></a>. <a href="http://apache.org/"><?php print preg_replace("#^([^\s]+)(.*)$#i", "\\1", $_SERVER["SERVER_SOFTWARE"]); ?></a> patched by <a href="http://adamwhitcroft.com/apaxy/">Apaxy</a><a href="https://github.com/sentfanwyaerda/Apaxy-plus-plus">++</a>
 </div><!--/.footer-->
 <script>
 function mkButtons(href, history, i){

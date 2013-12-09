@@ -1,10 +1,10 @@
 <?php
 $plus_settings = array(
-	"system-type" => "RaspberryPi",
-	"system-type:url" => "http://raspberrypi.org/",
-	"distribution" => "Kali Linux",
-	"distribution:url" => "http://kali.org/",
-	"php-markdown:dir" => dirname(dirname(__FILE__))."/php-markdown",
+	"system-type" => "UDOO",
+	"system-type:url" => "http://www.udoo.org/",
+	"distribution" => "Ubuntu",
+	"distribution:url" => "http://www.ubuntu.com/",
+	"php-markdown:dir" => dirname(dirname(dirname(__FILE__)))."/../tools/php-markdown",
 	"ckeditor:link" => "/.tools/ckeditor"
 );
 ?>
