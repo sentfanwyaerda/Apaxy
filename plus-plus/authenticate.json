@@ -1,1 +1,1 @@
-{"methods": ["http", "pam"], "debug": 1, "HTTP authentication": 1}
+{"methods": ["http", "pam"], "debug": 1}
