@@ -9,6 +9,13 @@ require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'settings.php');
 	Powered by a <a href="<?php print $plus_settings["system-type:url"]; ?>"><?php print $plus_settings["system-type"]; ?></a> running <a href="<?php print $plus_settings["distribution:url"]; ?>"><?php print $plus_settings["distribution"]; ?></a>. <a href="http://apache.org/"><?php print preg_replace("#^([^\s]+)(.*)$#i", "\\1", $_SERVER["SERVER_SOFTWARE"]); ?></a> patched by <a href="http://adamwhitcroft.com/apaxy/">Apaxy</a><a href="https://github.com/sentfanwyaerda/Apaxy-plus-plus">++</a>
 </div><!--/.footer-->
 <script>
+function inArray(needle, haystack) {
+    var length = haystack.length;
+    for(var i = 0; i < length; i++) {
+        if(haystack[i] == needle) return true;
+    }
+    return false;
+}
 function mkButtons(href, history, i){
 	if(href[href.length - 1] == '/' || href[0] == '?'){
 		var node = document.createTextNode(" ");
@@ -20,7 +27,8 @@ function mkButtons(href, history, i){
 		node.setAttribute("align","right");
 
 		//Edit
-		if(href.substring(href.length - 3) == '.md'){
+		//if(href.substring(href.length - 3) == '.md'){
+		if(inArray(href.substring(href.length - 3), ['.md']) || inArray(href.substring(href.length - 4), ['.txt','.htm','.css']) || inArray(href.substring(href.length - 5), ['.html'])){
 			node.appendChild( mkEditButton(href) );
 		}
 		else{
